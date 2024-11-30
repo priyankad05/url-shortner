@@ -24,4 +24,4 @@ eg: cd /path/to/your/project
 
 **2. Initialize the Go Module**
 Run the following command to create a new go.mod file:
-eg: go mod init <<module-name>>
+eg: go mod init "module-name"
