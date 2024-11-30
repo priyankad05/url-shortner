@@ -15,3 +15,13 @@ Limitations:
 
 URLs are stored in memory (data is lost on server restart).
 Not suitable for production without additional improvements like persistent storage, HTTPS, and scalability enhancements.
+
+To create a new go.mod file and initialize a Go module in your project folder, follow these steps:
+
+**1. Navigate to Your Project Directory**
+Open a terminal and navigate to your project directory where you want to initialize the Go module:
+eg: cd /path/to/your/project
+
+**2. Initialize the Go Module**
+Run the following command to create a new go.mod file:
+eg:go mod init <module-name>
