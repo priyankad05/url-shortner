@@ -28,3 +28,5 @@ eg: go mod init "module-name"
 
 **Running the project:**
 navigate to the folder where main.go file is present and run the command: go run main.go
+You will see a port number displayed, past it as http://localhost:"portnumber" 
+You should see the URL shortener web page with an input form. Enter a long URL, click "Shorten," and the page will display the original and shortened URLs
