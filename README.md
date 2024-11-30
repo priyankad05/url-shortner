@@ -25,3 +25,6 @@ eg: cd /path/to/your/project
 **2. Initialize the Go Module**
 Run the following command to create a new go.mod file:
 eg: go mod init "module-name"
+
+**Running the project:**
+navigate to the folder where main.go file is present and run the command: go run main.go
