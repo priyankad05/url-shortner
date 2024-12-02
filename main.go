@@ -143,8 +143,9 @@ func generateShortKey() string {
 
 	rand.Seed(time.Now().UnixNano())
 	shortKey := make([]byte, keyLength)
-	for i := range shortKey {
-		shortKey[i] = charset[rand.Intn(len(charset))]
+	for i := range shortKey { //0 to keylen -1
+		shortKey[i] = charset[rand.Intn(len(charset))] // between 0 to len(charset)-1
 	}
-	return string(shortKey)
+	return string(shortKey) //from byte array
+
 }
