@@ -29,18 +29,41 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 	fmt.Fprint(w, `
 		<!DOCTYPE html>
-		<html>
-		<head>
-			<title>URL Shortener</title>
-		</head>
-		<body>
-			<h2>URL Shortener</h2>
-			<form method="post" action="/shorten">
-				<input type="url" name="url" placeholder="Enter a URL" required>
-				<input type="submit" value="Shorten">
-			</form>
-		</body>
-		</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <header style="text-align: center;">
+        <h1 style="font-family: Arial, sans-serif;">URL Shortener</h1>
+        <p><strong>Simplify your links in seconds!</strong></p>
+    </header>
+    <main style="display: flex; justify-content: center; margin-top: 20px;">
+        <form method="post" action="/shorten" style="text-align: center;">
+            <label for="url" style="font-family: Verdana, sans-serif; font-size: 1.1em;"><strong>Enter a URL:</strong></label><br><br>
+            <input 
+                type="url" 
+                id="url" 
+                name="url" 
+                placeholder="https://example.com" 
+                required 
+                style="padding: 8px; width: 300px; font-family: Arial, sans-serif;"
+            ><br><br>
+            <input 
+                type="submit" 
+                value="Shorten" 
+                style="padding: 8px 16px; font-family: Arial, sans-serif; font-weight: bold; cursor: pointer;"
+            >
+        </form>
+    </main>
+    <footer style="text-align: center; margin-top: 40px; font-family: Arial, sans-serif; font-size: 0.9em; color: gray;">
+        <p>&copy; 2024 URL Shortener. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
 	`)
 }
 
@@ -67,16 +90,32 @@ func handleShorten(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 	fmt.Fprint(w, `
 		<!DOCTYPE html>
-		<html>
-		<head>
-			<title>URL Shortener</title>
-		</head>
-		<body>
-			<h2>URL Shortener</h2>
-			<p>Original URL: `, originalURL, `</p>
-			<p>Shortened URL: <a href="`, shortenedURL, `">`, shortenedURL, `</a></p>
-		</body>
-		</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <header style="text-align: center;">
+        <h1 style="font-family: Arial, sans-serif;">URL Shortener</h1>
+    </header>
+    <main style="margin: 20px auto; max-width: 600px; font-family: Arial, sans-serif;">
+        <p><strong>Original URL:</strong> <span style="font-family: Courier New, monospace;">`, originalURL, `</span></p>
+        <p>
+            <strong>Shortened URL:</strong> 
+            <a 
+                href="`, shortenedURL, `" 
+                target="_blank" 
+                style="color: blue; text-decoration: underline;"
+            >
+                `, shortenedURL, `
+            </a>
+        </p>
+    </main>
+</body>
+</html>
+
 	`)
 }
 
